@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Jadwal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <form action="api/add_event.php" method="POST">
+        <h1>Tambah Jadwal</h1>
+        <input type="text" name="event_name" placeholder="Nama Kegiatan" required>
+        <input type="date" name="start_date" required>
+        <input type="date" name="end_date" required>
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>

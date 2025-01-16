@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Jadwal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <form action="api/update_event.php" method="POST" id="editForm">
+        <h1>Edit Jadwal</h1>
+        <input type="hidden" name="id" id="eventId">
+        <input type="text" name="event_name" id="eventName" placeholder="Nama Kegiatan" required>
+        <input type="date" name="start_date" id="startDate" required>
+        <input type="date" name="end_date" id="endDate" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <script>
+        // Ambil query string id dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = urlParams.get('id');
+
+        // Ambil data jadwal berdasarkan ID dan tampilkan di form
+        fetch(`api/get_events.php?id=${eventId}`)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.length > 0) {
+                    const event = data[0];
+                    document.getElementById('eventId').value = event.id;
+                    document.getElementById('eventName').value = event.name;
+                    document.getElementById('startDate').value = event.start_date;
+                    document.getElementById('endDate').value = event.end_date;
+                } else {
+                    alert('Jadwal tidak ditemukan');
+                }
+            });
+    </script>
+</body>
+</html>

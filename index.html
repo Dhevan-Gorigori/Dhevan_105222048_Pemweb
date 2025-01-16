@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Jadwal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <button onclick="window.location.href='login.html'">Logout</button>
+        <button onclick="window.location.href='add_schedule.html'">Tambah Jadwal</button>
+    </header>
+    <main>
+        <div id="calendar"></div>
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Nama Kegiatan</th>
+                    <th>Tanggal Mulai</th>
+                    <th>Tanggal Selesai</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data diisi dengan JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/calendar.js"></script>
+</body>
+</html>
